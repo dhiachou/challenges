@@ -171,7 +171,7 @@ int main (int argc, char** argv){
     ///Output (and debug display )
     fout << maxBeadsCollected(rightEdges,leftEdges,n , N )<<endl;
 
-    //Releasing allocated memory //this causes some strange errors sometimes what might be the cause ?
+    //Releasing allocated memory
     delete[] rightEdges;
     delete[] leftEdges;
 
