@@ -37,7 +37,7 @@ short edgesCount(string str){
     char actualChar = str[0];
 
     for (short i(0) ; i<str.length(); i++){
-        while ('w'==actualChar){
+        while ('w'==actualChar && i < str.length()-1){
             i++;
             actualChar = str[i];
         }
@@ -72,7 +72,7 @@ short * rightEdgesPositions(string str, short n){
     }
 
     for (short i(0) ; i<str.length(); i++){
-        while ('w'==actualChar){
+        while ('w'==actualChar && i <str.length()-1){
             i++;
             actualChar = str[i];
         }
@@ -106,7 +106,7 @@ short * leftEdgesPositions(string str, short n){
     char actualChar = str[str.length()-1];
 
     for (short i(str.length()-1) ; i>=0; i--){
-        while ('w'==actualChar){
+        while ('w'==actualChar&& i>0){
             i--;
             actualChar = str[i];
         }
@@ -172,8 +172,8 @@ int main (int argc, char** argv){
     fout << maxBeadsCollected(rightEdges,leftEdges,n , N )<<endl;
 
     //Releasing allocated memory //this causes some strange errors sometimes what might be the cause ?
-    //delete[] rightEdges;
-    //delete[] leftEdges;
+    delete[] rightEdges;
+    delete[] leftEdges;
 
     return 0;
 }
